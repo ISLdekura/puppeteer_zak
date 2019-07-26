@@ -47,5 +47,5 @@ const fs = require('fs');
     await page.screenshot({path: 'screenshot_nippou_saved.png'});
   }
 
-  await browser.close();
+  // await browser.close();
 })();
