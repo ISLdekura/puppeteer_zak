@@ -1,6 +1,9 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
+  const user_name = '';
+  const user_secret = '';
+
   const host = 'https://insight-lab.zac.ai/insight-lab/';
   const url_logon = host + 'User/user_logon.asp';
   const browser = await puppeteer.launch();
