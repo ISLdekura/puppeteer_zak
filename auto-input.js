@@ -1,9 +1,10 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const path = require('path');
 
 (async () => {
-  const user_name = fs.readFileSync("user_name.txt", {encoding: "utf-8"});
-  const user_secret = fs.readFileSync("user_secret.txt", {encoding: "utf-8"});
+  const user_name = fs.readFileSync(path.join(__dirname, "user_name.txt"), {encoding: "utf-8"});
+  const user_secret = fs.readFileSync(path.join(__dirname, "user_secret.txt"), {encoding: "utf-8"});
 
   const host = 'https://insight-lab.zac.ai/insight-lab/';
   const url_logon = host + 'User/user_logon.asp';
