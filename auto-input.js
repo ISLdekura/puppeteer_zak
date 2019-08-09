@@ -9,6 +9,7 @@ const fs = require('fs');
   const url_logon = host + 'User/user_logon.asp';
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
+  await page.setViewport({width: 1920, height: 1280});
 
   // login screen
   {
