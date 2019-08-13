@@ -19,7 +19,7 @@ const path = require('path');
     await page.type('input[name="password"]', user_secret);
     // await page.$eval('input[name="user_name"]', el => el.value = user_name);
     // await page.$eval('input[name="password"]', el => el.value = user_secret);
-    await page.screenshot({path: 'screenshot_login.png'});
+    //await page.screenshot({path: 'screenshot_login.png'});
     await page.click('#submit1')
   }
   
@@ -38,7 +38,7 @@ const path = require('path');
     await frame.select('select[name="time_in_hour"]', '9');
     await frame.select('select[name="time_out_hour"]', '18');
     await frame.select('select[name="time_break_input_hour"]', '1');
-    await page.screenshot({path: 'screenshot_nippou.png'});
+    //await page.screenshot({path: 'screenshot_nippou.png'});
     await frame.click('#button5');
   }
 
@@ -46,7 +46,7 @@ const path = require('path');
   {
     const frame = await page.frames().find(f => f.name() === 'classic_window');
     await frame.waitFor('select[name="time_in_hour"]', {timeout: 120000});
-    await page.screenshot({path: 'screenshot_nippou_saved.png'});
+    //await page.screenshot({path: 'screenshot_nippou_saved.png'});
   }
 
   // await browser.close();
