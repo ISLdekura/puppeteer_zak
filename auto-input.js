@@ -26,7 +26,7 @@ const path = require('path');
   // menu screen
   {
     await page.waitFor('img[class="logo-image"]', {timeout: 120000});
-    await page.screenshot({path: 'screenshot_main.png'});
+    //await page.screenshot({path: 'screenshot_main.png'});
   }
 
   // nippou screen
