@@ -3,7 +3,7 @@
 コマンド一発で「出勤・退勤・休憩」を入力して保存してくれるソフトです。
 
 # インストール
-前提条件として nodejs >= 10 が必要です。
+前提条件として nodejs >= 8 が必要です。
 
 ```
 git clone https://github.com/ISLdekura/puppeteer_zak.git
