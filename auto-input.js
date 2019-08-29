@@ -38,7 +38,7 @@ const path = require('path');
     await frame.select('select[name="time_out_hour"]', hour_end);
     await frame.waitFor('select[name="time_break_input_hour"]', {timeout: 120000});
     await frame.select('select[name="time_break_input_hour"]', '1');
-    await frame.waitFor('#button5"]', {timeout: 120000});
+    await frame.waitFor('#button5', {timeout: 120000});
     await frame.click('#button5');
   }
 
