@@ -1,10 +1,12 @@
+require('dotenv').config();
 const puppeteer = require('puppeteer');
-const fs = require('fs');
 const path = require('path');
 
 (async () => {
-  const user_name = fs.readFileSync(path.join(__dirname, "user_name.txt"), {encoding: "utf-8"});
-  const user_secret = fs.readFileSync(path.join(__dirname, "user_secret.txt"), {encoding: "utf-8"});
+  const user_name = process.env.USER_NAME;
+  const user_secret = process.env.USER_SECRET;
+  const hour_start = process.env.HOUR_START; // string '9' etc
+  const hour_end = process.env.HOUR_END; // string '18' etc
 
   const host = 'https://insight-lab.zac.ai/insight-lab/';
   const url_logon = host + 'User/user_logon.asp';
@@ -35,8 +37,8 @@ const path = require('path');
     await page.waitFor('iframe[id="classic_window"]', {timeout: 120000});
     const frame = await page.frames().find(f => f.name() === 'classic_window');
     await frame.waitFor('select[name="time_in_hour"]', {timeout: 120000});
-    await frame.select('select[name="time_in_hour"]', '9');
-    await frame.select('select[name="time_out_hour"]', '18');
+    await frame.select('select[name="time_in_hour"]', hour_start);
+    await frame.select('select[name="time_out_hour"]', hour_end);
     await frame.select('select[name="time_break_input_hour"]', '1');
     //await page.screenshot({path: 'screenshot_nippou.png'});
     await frame.click('#button5');
