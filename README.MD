@@ -19,4 +19,5 @@ echo "HOUR_END=18" >> .env
 node .\auto-input.js
 ```
 出勤・退勤・休憩が自動入力されます。  
-![デモ](demo.png)
+![デモ](demo.png)  
+あとは作業ごとの時間を入れて確定するだけです。
